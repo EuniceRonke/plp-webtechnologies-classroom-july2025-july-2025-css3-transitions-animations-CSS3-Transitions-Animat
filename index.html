@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>  
+    <h1>Hi, I'm Eunice</h1>
+    <p>Aspiring Software Engineer & Data Analyst</p>
+    <button id="themeToggle">Toggle Theme</button>
+
+    <!-- Navigation Menu -->
+    <nav>
+      <ul>
+        <li><a href="#about">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Project</a></li>
+        <li><a href="#" id="showModalBtn">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- About Section -->
+    <section id="about">
+      <h2>About Me</h2>
+      <p>
+        I am passionate about creating efficient digital solutions, 
+        organizing workflows, and bringing ideas to life with interactive web projects. 
+        This portfolio showcases my skills in HTML, CSS, and JavaScript.
+      </p>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="project">
+        <h3>Interactive Counter</h3>
+        <p id="counterValue">0</p>
+        <button id="increaseBtn">Increase</button>
+        <button id="resetBtn">Reset</button>
+      </div>
+
+      <div class="project">
+        <h3>FAQ Section</h3>
+        <div class="faq">
+          <h4 class="faq-question">What can I do?</h4>
+          <p class="faq-answer">I can assist with admin tasks, data entry, and build interactive web solutions.</p>
+        </div>
+        <div class="faq">
+          <h4 class="faq-question">What am I learning?</h4>
+          <p class="faq-answer">I’m expanding into Web Development and improving my technical skills.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Animations Section -->
+    <section id="animations">
+      <h2>CSS & JS Animations</h2>
+      <button id="animateBoxBtn">Animate Box</button>
+      <div id="box"></div>
+
+      <div class="card" id="flipCard">
+        <div class="card-inner">
+          <div class="card-front">Front</div>
+          <div class="card-back">Back</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+
+<!-- Contact Modal -->
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <span id="closeModal">&times;</span>
+    <h3>Contact Information</h3>
+    <p>Email: <a href="mailto:eunicefagbemide@gmail.com">eunicefagbemide@gmail.com</a></p>
+    <p>GitHub: <a href="https://github.com/EuniceRonke" target="_blank">github.com/EuniceRonke</a></p>
+    <p>Phone: <a href="tel:+2348060410339">+2348060410339</a></p>
+  </div>
+</div>
+
+  <footer>
+    <p>&copy; 2025 Eunice. All Rights Reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
