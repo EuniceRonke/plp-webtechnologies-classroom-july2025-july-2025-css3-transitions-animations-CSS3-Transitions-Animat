@@ -37,39 +37,80 @@ faqQuestions.forEach(question => {
 });
 
 // ----------------------
-// Part 2: Functions
-// ----------------------
+// Part 2: JS Functions
 function greetUser(name) {
   return `Hello, ${name}!`;
 }
+
 function squareNumber(num) {
-  let result = num * num;
-  return result;
+  return num * num;
 }
-console.log(greetUser("Eunice"));
-console.log("Square of 4 is", squareNumber(4));
+
+// DOM Elements
+const runFunctionsBtn = document.getElementById('runFunctionsBtn');
+const functionsOutput = document.getElementById('functionsOutput');
+const userNameInput = document.getElementById('userName');
+const userNumberInput = document.getElementById('userNumber');
+
+runFunctionsBtn.addEventListener('click', () => {
+  const name = userNameInput.value.trim();
+  const number = parseFloat(userNumberInput.value);
+
+  if (!name || isNaN(number)) {
+    functionsOutput.innerHTML = `<p>Please enter a valid name and number.</p>`;
+    return;
+  }
+
+  functionsOutput.innerHTML = `
+    <p>${greetUser(name)}</p>
+    <p>Square of ${number} is ${squareNumber(number)}</p>
+  `;
+});
+
+
+// Display results on the page
+document.addEventListener('DOMContentLoaded', () => {
+  const functionsOutput = document.getElementById('functionsOutput');
+  if (functionsOutput) {
+    functionsOutput.innerHTML = `
+      <p>${greetUser("Eunice")}</p>
+      <p>Square of 4 is ${squareNumber(4)}</p>
+    `;
+  }
+});
 
 // ----------------------
-// Part 3: Animations with JS
+// Animations with JS (Part 3)
 // ----------------------
 const animateBoxBtn = document.getElementById('animateBoxBtn'); 
 const box = document.getElementById('box');
+
 animateBoxBtn.addEventListener('click', () => {
   box.style.transform = "translateX(200px) rotate(180deg)";
-  setTimeout(() => { box.style.transform = "translateX(0) rotate(0)"; }, 1000);
+  setTimeout(() => { 
+    box.style.transform = "translateX(0) rotate(0)"; 
+  }, 1000);
 });
 
 // ----------------------
 // Modal (Contact Info)
 // ----------------------
 const modal = document.getElementById('modal');
-const showModalBtn = document.getElementById('showModalBtn');
+const showModalBtn = document.getElementById('showModalBtn'); // nav Contact link
 const closeModal = document.getElementById('closeModal');
 
-showModalBtn.addEventListener('click', () => {
+showModalBtn.addEventListener('click', (e) => {
+  e.preventDefault(); // prevent page jump
   modal.style.display = "flex";
 });
+
 closeModal.addEventListener('click', () => {
   modal.style.display = "none";
 });
 
+// click outside modal to close
+window.addEventListener('click', (e) => {
+  if (e.target === modal) {
+    modal.style.display = "none";
+  }
+});
